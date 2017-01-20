@@ -3,7 +3,7 @@ import * as SlidingMarker from 'marker-animate-unobtrusive'
 import { CarService } from '../../providers/car/car'
 
 @Component({
-  template: '<div></div>',
+  template: '',
   selector: 'available-cars'
 })
 export class AvailableCarsDirective implements OnInit {
@@ -51,12 +51,11 @@ export class AvailableCarsDirective implements OnInit {
   
   updateCarMarker(car) {
     for (let i = 0, numOfCars = this.carMarkers.length; i < numOfCars; i++) {
-      // find car and update it
+    // find car and update it
       if (this.carMarkers[i].id === car.id) {
         this.carMarkers[i].setPosition(new google.maps.LatLng(car.coord.lat, car.coord.lng))
         return
       }
-      
     }
     
     // car does not exist in carMarkers

@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnChanges, OnInit} from '@angular/core'
-import { PickupPubSub } from '../../providers/pickup-pub-sub/pickup-pub-sub'
 import { Observable } from 'rxjs/Observable'
+import { PickupPubSub } from '../../providers/pickup-pub-sub/pickup-pub-sub'
 
 @Component({
   selector: 'pickup',

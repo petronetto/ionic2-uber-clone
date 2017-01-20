@@ -31,7 +31,7 @@ import { HomePage } from '../pages/home/home'
     HomePage
   ],
   providers: [
-    //   {provide: ErrorHandler, useClass: IonicErrorHandler},
+      {provide: ErrorHandler, useClass: IonicErrorHandler},
       CarService,
       PickupPubSub
   ]

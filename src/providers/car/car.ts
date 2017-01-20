@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs/Rx'
-import { SimulateService } from '../simulate/simulate'
 import 'rxjs/add/operator/map'
+import { SimulateService } from '../simulate/simulate'
 
 
 @Injectable()

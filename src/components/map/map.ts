@@ -16,9 +16,10 @@ export class MapDirective implements OnInit {
   public isMapIdle: boolean
   public currentLocation: google.maps.LatLng
   
-  constructor(public nav: NavController, public loadingCtrl: LoadingController) {
-    
-  }
+  constructor(
+    public nav: NavController,
+    public loadingCtrl: LoadingController
+  ) {}
   
   ngOnInit() {
     this.map = this.createMap()
@@ -46,35 +47,25 @@ export class MapDirective implements OnInit {
   }
   
   getCurrentLocation(): Observable<google.maps.LatLng> {
-    
     let loading = this.loadingCtrl.create({
       content: 'Locating...'
     })
-    
     loading.present(loading)
-    
     let options = {timeout: 10000, enableHighAccuracy: true}
-    
     let locationObs = Observable.create(observable => {
-      
       Geolocation.getCurrentPosition(options)
         .then(resp => {
           let lat = resp.coords.latitude
           let lng = resp.coords.longitude
-          
           let location = new google.maps.LatLng(lat, lng)
-          
           console.log('Geolocation: ' + location)
-          
           observable.next(location)
-          
           loading.dismiss()
         },
         (err) => {
           console.log('Geolocation err: ' + err)
           loading.dismiss()
         })
-
     })
     
     return locationObs
@@ -95,12 +86,10 @@ export class MapDirective implements OnInit {
   }
   
   centerLocation(location) {
-    
     if (location) {
       this.map.panTo(location)
     }
     else {
-      
       this.getCurrentLocation().subscribe(currentLocation => {
         this.map.panTo(currentLocation)
       })
