@@ -71,10 +71,10 @@ export class MapDirective implements OnInit {
     return locationObs
   }
   
-  createMap(location = new google.maps.LatLng(40.712784, -74.005941)) {
+  createMap(location = new google.maps.LatLng(-20.297618, -40.295777)) {
     let mapOptions = {
       center: location,
-      zoom: 15,
+      zoom: 12,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       disableDefaultUI: true
     }

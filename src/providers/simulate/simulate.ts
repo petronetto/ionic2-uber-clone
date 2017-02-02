@@ -119,18 +119,17 @@ export class SimulateService {
   }
 
   getCars(lat, lng) {
-    
-    let carData = this.cars[this.carIndex]
-    
-    this.carIndex++
-    
-    if (this.carIndex > this.cars.length-1) {
+    return Observable.create(observer => {
+      let carData = this.cars[this.carIndex]
+      
+      this.carIndex++
+      
+      if (this.carIndex > this.cars.length-1) {
       this.carIndex = 0
-    }
-    
-    return Observable.create(
-      observer => observer.next(carData)
-    )
+      }
+
+      observer.next(carData)
+    })
   }
   
   private carIndex: number = 0
@@ -139,15 +138,15 @@ export class SimulateService {
     cars: [{
       id: 1,
       coord: {
-        lat: -26.097551,
-        lng: 28.050939
+        lat: -20.297618,
+        lng: -40.295777
       }
     },
     {
       id: 2,
       coord: {
-        lat: -26.102831,
-        lng: 28.059951
+        lat: -20.297600,
+        lng: -40.295720
       }
     }
   ]
@@ -157,15 +156,15 @@ export class SimulateService {
     cars: [{
       id: 1,
       coord: {
-        lat: -26.098823,
-        lng: 28.050531
+        lat: -20.297700,
+        lng: -40.295790
       }
     },
     {
       id: 2,
       coord: {
-        lat: -26.100403,
-        lng: 28.058728
+        lat: -20.297650,
+        lng: -40.295500
       }
     }
   ]
@@ -175,15 +174,15 @@ export class SimulateService {
     cars: [{
       id: 1,
       coord: {
-        lat: -26.100750,
-        lng: 28.050681
+        lat: -20.295512,
+        lng: -40.295080
       }
     },
     {
       id: 2,
       coord: {
-        lat: -26.101386,
-        lng: 28.056196
+        lat: -20.297180,
+        lng: -40.295600
       }
     }
   ]
@@ -193,15 +192,15 @@ export class SimulateService {
     cars: [{
       id: 1,
       coord: {
-        lat: -26.099864,
-        lng: 28.052827
+        lat: -20.296512,
+        lng: -40.295480
       }
     },
     {
       id: 2,
       coord: {
-        lat: -26.102542,
-        lng: 28.056754
+        lat: -20.297580,
+        lng: -40.295800
       }
     }
   ]
@@ -211,21 +210,21 @@ export class SimulateService {
     cars: [{
       id: 1,
       coord: {
-        lat: -26.098765,
-        lng: 28.055531
+        lat: -20.297630,
+        lng: -40.295750
       }
     },
     {
       id: 2,
       coord: {
-        lat: -26.103833,
-        lng: 28.057398
+        lat: -20.297680,
+        lng: -40.294000
       }
     }
   ]
  }
   
- private cars: Array<any> = [this.cars1, this.cars2, this.cars3, this.cars4, this.cars5]
+ private cars: Array<any> = [this.cars3, this.cars4, this.cars5]
   
 }
 

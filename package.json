@@ -1,7 +1,8 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "ionic-uber-clone",
+  "version": "1.0.0",
+  "author": "Juliano Petronetto <petronetto@xdevel.com.br",
+  "homepage": "http://xdevel.com.br",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -20,20 +21,22 @@
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/platform-server": "2.2.1",
     "@ionic/storage": "1.1.7",
-    "ionic-angular": "2.0.0-rc.5",
-    "ionic-native": "2.2.11",
+    "ionic-angular": "2.0.0",
+    "ionic-native": "2.4.1",
     "ionicons": "3.0.0",
-    "marker-animate-unobtrusive": "^0.2.8",
     "rxjs": "5.0.0-beta.12",
+    "zone.js": "0.6.26",
     "sw-toolbox": "3.4.0",
-    "zone.js": "0.6.26"
+    
+    "marker-animate-unobtrusive": "^0.2.8"
   },
   "devDependencies": {
     "@ionic/app-scripts": "1.0.0",
+    "typescript": "2.0.9",
+
     "@types/google-maps": "^3.2.0",
     "tslint-config-standard": "^3.0.0",
-    "tslint-eslint-rules": "^3.2.3",
-    "typescript": "2.0.9"
+    "tslint-eslint-rules": "^3.2.3"
   },
   "cordovaPlugins": [
     "cordova-plugin-console",
@@ -51,5 +54,5 @@
       "locator": "ios"
     }
   ],
-  "description": "MyIonic2Project: An Ionic project"
+  "description": "App build with Ionic to simulate an Uber clone"
 }
